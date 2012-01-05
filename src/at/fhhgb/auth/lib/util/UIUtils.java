@@ -14,10 +14,13 @@
  */
 package at.fhhgb.auth.lib.util;
 
+import java.util.List;
+
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 
 /**
@@ -46,8 +49,19 @@ public class UIUtils {
 		};
 		return showErrorDialog(context, title, message, onClickListener);
 	}
-	
+
+	/**
+	 * Workaround for {@link PackageManager#resolveActivity(Intent, int)} that returns null instead
+	 * of an activity chooser intent if no matching activities are found. If multiple actvities are found,
+	 * it will return the best match.
+	 * @param action The intent action string.
+	 */
 	public static ResolveInfo resolveActivity(Context context, String action) {
-		return context.getPackageManager().resolveActivity(new Intent(action), 0);
+		List<ResolveInfo> activities = context.getPackageManager().queryIntentActivities(new Intent(action), 0);
+		if (activities.size() > 0) {
+			return activities.get(0);
+		} else {
+			return null;
+		}
 	}
 }
