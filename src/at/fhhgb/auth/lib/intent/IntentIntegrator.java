@@ -63,7 +63,9 @@ public final class IntentIntegrator {
 	
 	
 	public class Extras {
+		/** A user Id. Data type: LONG */
 		public static final String EXTRA_USER_ID = "userid";
+		/** Email of a user. Type: String */
 		public static final String EXTRA_USER_EMAIL = "email";
 		public static final String EXTRA_AUTH_TYPE = "authtype";
 		public static final String EXTRA_MULTI_MODAL_MODES = "modes";

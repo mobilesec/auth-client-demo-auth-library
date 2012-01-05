@@ -168,7 +168,7 @@ public final class AuthDb {
         public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/vnd.hgb.feature";
         
         /** Build an Uri to query for all features of a subject. */
-        public static final Uri buildFeaturesForSubjectUri(int subjectId) {
+        public static final Uri buildFeaturesForSubjectUri(long subjectId) {
         	return CONTENT_URI.buildUpon().appendPath(PATH_FOR).appendPath(String.valueOf(subjectId)).build();
         }
 	}
