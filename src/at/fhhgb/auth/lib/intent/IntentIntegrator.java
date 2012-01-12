@@ -27,9 +27,6 @@ public final class IntentIntegrator {
 	
 	private static final String BASE_PACKAGE = "at.fhhgb.auth.intent";
 	
-	/** Some sort of request code is needed. */
-	public static final int REQUEST_CODE = 0x0000abcd;
-	
 	public class Actions {
 		/**
 		 * This is the action that will trigger the authentication workflow,
@@ -67,8 +64,14 @@ public final class IntentIntegrator {
 		public static final String EXTRA_USER_ID = "userid";
 		/** Email of a user. Type: String */
 		public static final String EXTRA_USER_EMAIL = "email";
+		/** Unique name of authentication type. */
 		public static final String EXTRA_AUTH_TYPE = "authtype";
+		/** String array. */
 		public static final String EXTRA_MULTI_MODAL_MODES = "modes";
+		/** Boolean with a binary decision: yes/no. */
+		public static final String EXTRA_RESULT = "result";
+		/** Double with a confidence value between 0.0 and 1.0. */
+		public static final String EXTRA_RESULT_CONFIDENCE = "confidence";
 	}
 	
 	/** Constants for identifying different types of authentication modes. */
