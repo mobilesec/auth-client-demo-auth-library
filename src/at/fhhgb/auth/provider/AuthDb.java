@@ -36,7 +36,6 @@ public final class AuthDb {
 	private static final String PATH_SUBJECT = "subject";
 	private static final String PATH_MODE = "mode";
 	private static final String PATH_FEATURE = "feature";
-	private static final String PATH_FOR = "for";
 	
 	public interface SubjectColumns {
 		/**
@@ -169,7 +168,7 @@ public final class AuthDb {
         
         /** Build an Uri to query for all features of a subject, REGARDLESS of mode. */
         public static final Uri buildFeaturesForSubjectUri(long subjectId) {
-        	return CONTENT_URI.buildUpon().appendPath(PATH_FOR).appendPath(String.valueOf(subjectId)).build();
+        	return CONTENT_URI.buildUpon().appendPath(PATH_SUBJECT).appendPath(String.valueOf(subjectId)).build();
         }
         
         /** 
@@ -185,7 +184,7 @@ public final class AuthDb {
          * to all known users).
          */
         public static final Uri buildFeaturesForMode(long modeId) {
-        	return CONTENT_URI.buildUpon().appendPath(PATH_FOR).appendPath(String.valueOf(modeId)).build();
+        	return CONTENT_URI.buildUpon().appendPath(PATH_MODE).appendPath(String.valueOf(modeId)).build();
         }
 	}
 }
