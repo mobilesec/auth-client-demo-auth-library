@@ -77,6 +77,7 @@ public final class IntentIntegrator {
 	/** Constants for identifying different types of authentication modes. */
 	public class AuthModes {
 		public static final String FACE_RECOGNITION = "facerecognition";
+		public static final String VOICE_RECOGNITION = "voicerecognition";
 		public static final String PASSWORD = "password";
 		public static final String MULTI_MODAL = "multimodal";
 	}

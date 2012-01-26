@@ -167,9 +167,25 @@ public final class AuthDb {
          */
         public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/vnd.hgb.feature";
         
-        /** Build an Uri to query for all features of a subject. */
+        /** Build an Uri to query for all features of a subject, REGARDLESS of mode. */
         public static final Uri buildFeaturesForSubjectUri(long subjectId) {
         	return CONTENT_URI.buildUpon().appendPath(PATH_FOR).appendPath(String.valueOf(subjectId)).build();
+        }
+        
+        /** 
+         * Build an Uri to query for features of a subject for a given auth mode.
+         */
+        public static final Uri buildFeaturesForSubjectAndMode(long subjectId, long modeId) {
+        	return buildFeaturesForSubjectUri(subjectId)
+        			.buildUpon().appendPath(PATH_MODE).appendPath(String.valueOf(modeId)).build();
+        }
+        
+        /**
+         * Build an Uri to query for all features of a given auth mode (to compare a user's features 
+         * to all known users).
+         */
+        public static final Uri buildFeaturesForMode(long modeId) {
+        	return CONTENT_URI.buildUpon().appendPath(PATH_FOR).appendPath(String.valueOf(modeId)).build();
         }
 	}
 }
