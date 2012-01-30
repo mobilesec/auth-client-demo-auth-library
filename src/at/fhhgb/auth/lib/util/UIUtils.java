@@ -24,6 +24,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 
 /**
+ * Some useful utility methods that are used in multiple places.
  * @author thomaskaiser
  *
  */

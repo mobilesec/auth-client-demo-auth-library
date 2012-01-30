@@ -19,7 +19,8 @@ import android.net.Uri;
 import android.provider.BaseColumns;
 
 /**
- * Provides convenience definitions for the authentication content providers.
+ * Provides column/table definitions for the authentication content providers,
+ * and some helper methods to generate URIs for database queries easily.
  * 
  * @author thomaskaiser
  *

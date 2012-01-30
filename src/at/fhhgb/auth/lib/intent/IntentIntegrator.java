@@ -18,7 +18,6 @@ package at.fhhgb.auth.lib.intent;
 
 /**
  * Provides some definitions to work with the authentication framework.
- * This may be used as a utility class to easily start an auth workflow.
  * 
  * @author thomaskaiser
  *
@@ -29,9 +28,7 @@ public final class IntentIntegrator {
 	
 	public class Actions {
 		/**
-		 * This is the action that will trigger the authentication workflow,
-		 * showing first a list of registered users and then a list of
-		 * registered authentication methods.
+		 * This is the action that will trigger the authentication workflow.
 		 */
 		public static final String ACTION_START_AUTH = BASE_PACKAGE
 				+ ".START_AUTH";
